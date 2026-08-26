@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f9fb;
+  --foreground: #172033;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-noto-sc), var(--font-geist), sans-serif;
+}
+
+* { border-color: #e2e8f0; }
+html { background: var(--background); }
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-noto-sc), var(--font-geist), sans-serif;
+}
+button, a, input { outline: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
+::selection { background: #bfe9e2; color: #123d3a; }
+
+@keyframes enter-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-enter { animation: enter-up .45s ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  .animate-enter { animation: none; }
+}
